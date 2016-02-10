@@ -1,0 +1,28 @@
+{
+  "name": "*",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "dependency-check package.json && standard && nsp check"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "babel-eslint": "5.0.0-beta8",
+    "standard": "5.4.1"
+  },
+  "dependencies": {
+    "babel-preset-es2015-node5": "1.1.2",
+    "babel-register": "6.4.3",
+    "bluebird": "3.2.1",
+    "dependency-check": "2.5.1",
+    "nsp": "2.2.0",
+    "ramda": "0.19.1"
+  }
+}
