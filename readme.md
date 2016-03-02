@@ -24,14 +24,19 @@ http
 
 # API
 
-#### `configman = require('@wunderflats/configman')`
+#### require
+
+`configman = require('@wunderflats/configman')`
 
 Returns an object with the methods:
+
 * `init : Array String -> Object`
 * `ensureAllSet -> Object`
 * `get -> Object`
 
-#### `config.init : Array String -> Object`
+#### inti
+
+`config.init : Array String -> Object`
 
 Takes an array of strings and returns the initial configman object again, thus can be chained with `get()` or `ensureAllSet`.
 
@@ -41,7 +46,9 @@ The array tells configman what environment variables should be set.
 config.init(['PORT'])
 ```
 
-#### `config.ensureAllSet : Object`
+#### ensureAllSet
+
+`config.ensureAllSet : Object`
 
 Returns an object containing properties for all configured environment variables.
 
@@ -53,7 +60,9 @@ config = configman
   .ensureAllSet() // throws if `PORT` is not set (part of `process.env`)
 ```
 
-#### `config.get() : Object`
+#### get
+
+`config.get() : Object`
 
 Returns and object containing properties for all configured environment variables.
 
