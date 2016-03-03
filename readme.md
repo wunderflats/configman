@@ -62,7 +62,7 @@ config = configman
 
 `config.get() : Object`
 
-Returns and object containing properties for all configured environment variables.
+Returns an object containing properties for all configured environment variables.
 
 Throws if one of those variables is not set (part of `process.env`) when accessed.
 
