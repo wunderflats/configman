@@ -20,8 +20,6 @@ http
   .listen(config.PORT, config.HOSTNAME)
 ```
 
-`configman.ensureAllSet()` either returns a config
-
 # API
 
 #### require
