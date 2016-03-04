@@ -5,7 +5,7 @@
 Tool for defining and checking environment variables in one place.
 
 **DO NOT USE THIS MODULE IN A PACKAGE/MODULE.**  
-This is a singleton and will break dependend applications that also use *configman*. (especially with npm@3)
+This is a singleton and will break dependent applications that also use *configman*. (especially with npm@3)
 
 
 ```
