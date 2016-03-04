@@ -38,21 +38,21 @@ Returns an object with the methods:
 * `ensureAllSet -> Object`
 * `get -> Object`
 
-#### inti
+#### init
 
-`config.init : Array String -> Object`
+`configman.init : Array String -> Object`
 
 Takes an array of strings and returns the initial configman object again, thus can be chained with `get()` or `ensureAllSet`.
 
 The array tells configman what environment variables should be set.
 
 ```js
-config.init(['PORT'])
+configman.init(['PORT'])
 ```
 
 #### ensureAllSet
 
-`config.ensureAllSet : Object`
+`configman.ensureAllSet : Object`
 
 Returns an object containing properties for all configured environment variables.
 
