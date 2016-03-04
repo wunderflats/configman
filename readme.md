@@ -1,6 +1,6 @@
-[![Travis Build](http://img.shields.io/travis/wunderflats/configman.svg?style=flat)](https://travis-ci.org/wunderflats/configman) [![npm](https://img.shields.io/npm/dm/configman.svg)](https://www.npmjs.com/package/configman)
-
 # configman
+
+[![Travis Build](http://img.shields.io/travis/wunderflats/configman.svg?style=flat)](https://travis-ci.org/wunderflats/configman) [![npm](https://img.shields.io/npm/dm/configman.svg)](https://www.npmjs.com/package/configman)
 
 Tool for defining and checking environment variables in one place.
 
