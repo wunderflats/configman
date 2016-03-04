@@ -14,7 +14,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/wunderflats/configman.git"
+    "url": "https://github.com/wunderflats/configman.git"
   },
   "devDependencies": {
     "dependency-check": "2.5.1",
