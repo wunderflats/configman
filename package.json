@@ -11,7 +11,7 @@
     "precommit": "npm run lint && npm test"
   },
   "author": "Wunderflats GmbH",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/wunderflats/configman.git"

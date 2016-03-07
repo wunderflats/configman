@@ -79,7 +79,3 @@ config = configman
 
 config.PORT // throws if PORT is not set (part of `process.env`)
 ```
-
-## License
-
-Unlicensed.
