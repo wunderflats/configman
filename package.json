@@ -1,6 +1,6 @@
 {
   "name": "@wunderflats/configman",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Tool for defining and checking environment variables in one place.",
   "main": "lib/index.js",
   "scripts": {
