@@ -1,7 +1,7 @@
 {
   "name": "@wunderflats/configman",
   "version": "0.0.9",
-  "description": "",
+  "description": "Tool for defining and checking environment variables in one place.",
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
