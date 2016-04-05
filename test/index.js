@@ -94,5 +94,17 @@ test('config', (t) => {
     delete process.env.FINN
   })
 
+  test('throws if sealed and `init` is called', (t) => {
+    // setup
+    t.plan(1)
+
+    config
+      .init([])
+      .seal()
+
+    // test
+    t.throws(config.init, /`configman\.init\(…\)` was called more than once\./)
+  })
+
   t.end()
 })

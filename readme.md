@@ -59,7 +59,7 @@ It also checks if all environment variable are set and throws if not.
 
 ```js
 config = configman
-  .init('PORT')
+  .init(['PORT'])
   .ensureAllSet() // throws if `PORT` is not set (part of `process.env`)
 ```
 
@@ -73,8 +73,20 @@ Throws if one of those variables is not set (part of `process.env`) when access
 
 ```js
 config = configman
-  .init('PORT')
+  .init(['PORT'])
   .get()
 
 config.PORT // throws if PORT is not set (part of `process.env`)
 ```
+
+#### seal
+
+`config.seal() : void`
+
+Seals configman. Successive calls to `init` will throw.
+
+```js
+config = configman
+  .init(['PORT', 'HOST'])
+  .seal()
+  .init(['PORT']) // throws because init was already called once.
