@@ -4,89 +4,88 @@
 
 Tool for defining and checking environment variables in one place.
 
-**DO NOT USE THIS MODULE IN A PACKAGE/MODULE.**
-This is a singleton and will break dependent applications that also use *configman*. (especially with npm@3)
-
-```
+```sh
 npm install @wunderflats/configman
 ```
 
 ## Usage
 
-``` js
+```js
 const envVars = ['PORT', 'HOSTNAME']
 
 const config = require('@wunderflats/configman')
-  .init(envVars)
-  .ensureAllSet()
+  .ensureAllSet(envVars)
 
 http
   .createServer()
   .listen(config.PORT, config.HOSTNAME)
 ```
 
-# API
+## API
 
-#### require
-
-`configman = require('@wunderflats/configman')`
-
-Returns an object with the methods:
-
-* `init : Array String -> Object`
-* `ensureAllSet -> Object`
-* `get -> Object`
-
-#### init
-
-`configman.init : Array String -> Object`
-
-Takes an array of strings and returns the initial configman object again, thus can be chained with `get()` or `ensureAllSet`.
-
-The array tells configman what environment variables should be set.
+### `require('@wunderflats/configman')`
 
 ```js
-configman.init(['PORT'])
+const configman = require('@wunderflats/configman')
 ```
 
-#### ensureAllSet
+Returns an object of type Configman:
 
-`configman.ensureAllSet : Object`
+```js
+type Configman = {
+  ensureAllSet(environmentVariables: string[]): Object,
+  get(environmentVariable: string): string
+}
+```
 
-Returns an object containing properties for all configured environment variables.
+#### `ensureAllSet()`
+
+```js
+configman.ensureAllSet(environmentVariables: string[]) : Object
+```
+
+Returns an object containing properties for all configured environment
+variables.
 
 It also checks if all environment variable are set and throws if not.
 
 ```js
+let config
+
+process.env.PORT = 1337
+process.env.YAWP = undefined
+
 config = configman
-  .init(['PORT'])
-  .ensureAllSet() // throws if `PORT` is not set (part of `process.env`)
+  .ensureAllSet(['PORT'])
+
+console.log(config) // { PORT: 1337}
+
+
+config = configman
+  .ensureAllSet(['YAWP']) // throws if `PORT` is not set (part of `process.env`)
 ```
 
-#### get
-
-`config.get() : Object`
-
-Returns an object containing properties for all configured environment variables.
-
-Throws if one of those variables is not set (part of `process.env`) when accessed.
+### `get()`
 
 ```js
-config = configman
-  .init(['PORT'])
-  .get()
-
-config.PORT // throws if PORT is not set (part of `process.env`)
+configman.get(environmentVariable: string): string
 ```
 
-#### seal
+Returns an object containing properties for all configured environment
+variables.
 
-`config.seal() : void`
-
-Seals configman. Successive calls to `init` will throw.
+Throws if one of those variables is not set (part of `process.env`) when
+accessed.
 
 ```js
-config = configman
-  .init(['PORT', 'HOST'])
-  .seal()
-  .init(['PORT']) // throws because init was already called once.
+process.env.PORT = 1337
+process.env.YAWP = undefined
+
+const PORT = configman
+  .get('PORT')
+
+console.log(PORT) // 1337
+
+const YAWP = configman
+  .get('YAWP') // throws if PORT is not set (part of `process.env`)
+```
