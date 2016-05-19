@@ -1,8 +1,8 @@
 /* eslint-disable no-process-env */
 'use strict'
 
-const test = require('tape')
 const config = require('../lib/index')
+const test = require('tap').test
 
 test('config', (t) => {
   test('`ensureAllSet` throws and exceptions if called before init', (t) => {
