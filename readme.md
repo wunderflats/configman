@@ -55,7 +55,7 @@ configman.ensureAllSet(['PORT'])
 console.log(configman.get('PORT')) // { PORT: 1337}
 
 config = configman
-  .ensureAllSet(['YAWP']) // throws if `PORT` is not set (part of `process.env`)
+  .ensureAllSet(['YAWP']) // throws since `YAWP` is not set (part of `process.env`)
 ```
 
 ### `get()`
@@ -80,5 +80,5 @@ const PORT = configman
 console.log(PORT) // 1337
 
 const YAWP = configman
-  .get('YAWP') // throws if PORT is not set (part of `process.env`)
+  .get('YAWP') // throws since `YAWP` is not set (part of `process.env`)
 ```
