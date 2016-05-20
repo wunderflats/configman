@@ -8,7 +8,8 @@
     "test": "tap test/**/*.js",
     "lint": "eslint lib test",
     "pretest": "dependency-check package.json",
-    "precommit": "npm run lint && npm test"
+    "precommit": "npm run lint && npm test",
+    "postpublish": "git push && git push --tags"
   },
   "author": "Wunderflats GmbH",
   "license": "MIT",
