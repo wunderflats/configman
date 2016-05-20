@@ -6,19 +6,16 @@ const test = require('tap').test
 const configman = require('../lib/index')
 
 test('config', (t) => {
-  test('defines only the properties it is asked to define', (t) => {
+  test('`ensureAllSet` returns configman', (t) => {
     // setup
-    t.plan(2)
+    t.plan(1)
 
     process.env.PORT = '1337'
-    delete process.env.ICEKING
 
-    const config = configman
-      .ensureAllSet(['PORT'])
+    const config = configman.ensureAllSet(['PORT'])
 
     // test
-    t.true(config.hasOwnProperty('PORT'), 'PATH defined')
-    t.false(config.hasOwnProperty('ICEKING'), 'ICEKING is undefined')
+    t.deepEqual(config, configman)
 
     // tear down
     delete process.env.PORT
