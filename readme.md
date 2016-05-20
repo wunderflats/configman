@@ -13,12 +13,12 @@ npm install @wunderflats/configman
 ```js
 const envVars = ['PORT', 'HOSTNAME']
 
-const config = require('@wunderflats/configman')
+const configman = require('@wunderflats/configman')
   .ensureAllSet(envVars)
 
 http
   .createServer()
-  .listen(config.PORT, config.HOSTNAME)
+  .listen(configman.get('PORT'), configman.get('HOSTNAME'))
 ```
 
 ## API
@@ -33,7 +33,7 @@ Returns an object of type Configman:
 
 ```js
 type Configman = {
-  ensureAllSet(environmentVariables: string[]): Object,
+  ensureAllSet(environmentVariables: string[]): Configman,
   get(environmentVariable: string): string
 }
 ```
@@ -41,25 +41,18 @@ type Configman = {
 #### `ensureAllSet()`
 
 ```js
-configman.ensureAllSet(environmentVariables: string[]) : Object
+configman.ensureAllSet(environmentVariables: string[]) : Configman
 ```
 
-Returns an object containing properties for all configured environment
-variables.
-
-It also checks if all environment variable are set and throws if not.
+Checks if all environment variable are set and throws if not. Returns configman.
 
 ```js
-let config
-
 process.env.PORT = 1337
 process.env.YAWP = undefined
 
-config = configman
-  .ensureAllSet(['PORT'])
+configman.ensureAllSet(['PORT'])
 
-console.log(config) // { PORT: 1337}
-
+console.log(configman.get('PORT')) // { PORT: 1337}
 
 config = configman
   .ensureAllSet(['YAWP']) // throws if `PORT` is not set (part of `process.env`)
