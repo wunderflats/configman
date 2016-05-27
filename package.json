@@ -9,7 +9,7 @@
     "lint": "eslint lib test",
     "pretest": "dependency-check package.json",
     "precommit": "npm run lint && flow check && npm test",
-    "postpublish": "git push && git push --tags"
+    "prepublish": "git push && git push --tags"
   },
   "author": "Wunderflats GmbH",
   "license": "MIT",
