@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node lib/index.js",
     "test": "node --test test/",
+    "format": "prettier --write .",
     "lint": "eslint lib test",
     "precommit": "npm run lint && npm test",
     "prepare": "husky"
@@ -18,11 +19,13 @@
   },
   "devDependencies": {
     "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "6.2.0",
     "husky": "9.0.11",
-    "np": "^5.0.3"
+    "np": "^5.0.3",
+    "prettier": "3.2.5"
   },
   "dependencies": {
     "debug": "4.1.1"
