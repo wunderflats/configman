@@ -11,14 +11,11 @@ npm install @wunderflats/configman
 ## Usage
 
 ```js
-const envVars = ['PORT', 'HOSTNAME']
+const envVars = ["PORT", "HOSTNAME"];
 
-const configman = require('@wunderflats/configman')
-  .ensureAllSet(envVars)
+const configman = require("@wunderflats/configman").ensureAllSet(envVars);
 
-http
-  .createServer()
-  .listen(configman.get('PORT'), configman.get('HOSTNAME'))
+http.createServer().listen(configman.get("PORT"), configman.get("HOSTNAME"));
 ```
 
 ## API
@@ -26,7 +23,7 @@ http
 ### `require('@wunderflats/configman')`
 
 ```js
-const configman = require('@wunderflats/configman')
+const configman = require("@wunderflats/configman");
 ```
 
 Returns an object of type Configman:
@@ -47,15 +44,14 @@ configman.ensureAllSet(environmentVariables: string[]) : Configman
 Checks if all environment variable are set and throws if not. Returns configman.
 
 ```js
-process.env.PORT = 1337
-process.env.YAWP = undefined
+process.env.PORT = 1337;
+process.env.YAWP = undefined;
 
-configman.ensureAllSet(['PORT'])
+configman.ensureAllSet(["PORT"]);
 
-console.log(configman.get('PORT')) // { PORT: 1337}
+console.log(configman.get("PORT")); // { PORT: 1337}
 
-config = configman
-  .ensureAllSet(['YAWP']) // throws since `YAWP` is not set (part of `process.env`)
+config = configman.ensureAllSet(["YAWP"]); // throws since `YAWP` is not set (part of `process.env`)
 ```
 
 ### `get()`
@@ -71,14 +67,12 @@ Throws if one of those variables is not set (part of `process.env`) when
 accessed.
 
 ```js
-process.env.PORT = 1337
-process.env.YAWP = undefined
+process.env.PORT = 1337;
+process.env.YAWP = undefined;
 
-const PORT = configman
-  .get('PORT')
+const PORT = configman.get("PORT");
 
-console.log(PORT) // 1337
+console.log(PORT); // 1337
 
-const YAWP = configman
-  .get('YAWP') // throws since `YAWP` is not set (part of `process.env`)
+const YAWP = configman.get("YAWP"); // throws since `YAWP` is not set (part of `process.env`)
 ```
