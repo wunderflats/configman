@@ -7,7 +7,8 @@
     "start": "node lib/index.js",
     "test": "node --test test/",
     "lint": "eslint lib test",
-    "precommit": "npm run lint && npm test"
+    "precommit": "npm run lint && npm test",
+    "prepare": "husky"
   },
   "author": "Wunderflats GmbH",
   "license": "MIT",
@@ -22,7 +23,7 @@
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "4.2.1",
     "eslint-plugin-standard": "4.0.0",
-    "husky": "3.0.0",
+    "husky": "9.0.11",
     "np": "^5.0.3"
   },
   "dependencies": {
