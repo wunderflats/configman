@@ -1,7 +1,0 @@
-{
-  "extends": "standard",
-  "rules": {
-    "no-process-env": [2],
-    "object-curly-spacing": [2, "always"]
-  }
-}

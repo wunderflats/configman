@@ -27,7 +27,7 @@ describe('config', () => {
     assert.throws(() => configman.get('ICEKING'), /environment variable iceking is not set!/i)
   })
 
-  it('throws if a `ensureAllSet` is called and a property is not backed by an env var', (t) => {
+  it('throws if a `ensureAllSet` is called and a property is not backed by an env var', () => {
     // setup
     delete process.env.ICEKING
 
@@ -49,7 +49,7 @@ describe('config', () => {
     delete process.env.FINN
   })
 
-  it('does not throw if `ensureAllSet` is called and all properties are backed by an env var', (t) => {
+  it('does not throw if `ensureAllSet` is called and all properties are backed by an env var', () => {
     // set up
     process.env.FINN = 'jake'
 
