@@ -4,7 +4,10 @@
   "description": "Tool for defining and checking environment variables in one place.",
   "author": "Wunderflats GmbH",
   "license": "MIT",
-  "repository": "https://github.com/wunderflats/configman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wunderflats/configman.git"
+  },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {
