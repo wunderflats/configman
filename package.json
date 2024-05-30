@@ -3,6 +3,7 @@
   "version": "2.2.0",
   "description": "Tool for defining and checking environment variables in one place.",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "start": "node lib/index.js",
     "test": "node --test test/",
