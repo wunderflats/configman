@@ -2,8 +2,14 @@
   "name": "@wunderflats/configman",
   "version": "2.2.0",
   "description": "Tool for defining and checking environment variables in one place.",
+  "author": "Wunderflats GmbH",
+  "license": "MIT",
+  "repository": "https://github.com/wunderflats/configman",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "scripts": {
     "start": "node lib/index.js",
     "test": "node --test test/",
@@ -12,12 +18,6 @@
     "lint": "eslint lib test",
     "lint:check": "eslint --fix lib test",
     "prepare": "husky"
-  },
-  "author": "Wunderflats GmbH",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wunderflats/configman.git"
   },
   "devDependencies": {
     "eslint": "8.57.0",
