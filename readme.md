@@ -30,6 +30,7 @@ Returns an object of type Configman:
 type Configman = {
   ensureAllSet(environmentVariables: string[]): Configman,
   get(environmentVariable: string): string
+  getOrDefault(environmentVariable: string, defaultValue?: string): string | undefined
 }
 ```
 
@@ -74,3 +75,7 @@ console.log(PORT); // 1337
 
 const YAWP = configman.get("YAWP"); // throws since `YAWP` is not set (part of `process.env`)
 ```
+
+### `getOrDefault()`
+
+Like `get()` but will not throw an exception.

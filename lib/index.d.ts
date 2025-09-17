@@ -1,6 +1,14 @@
 declare const configman: {
   ensureAllSet(): void;
-  get(key: string): string;
+  /**
+   * Throws if the key is not defined, unless a default value is provided
+   */
+  get(environmentVariable: string): string;
+  getOrDefault(environmentVariable: string, defaultValue: string): string;
+  getOrDefault(
+    environmentVariable: string,
+    defaultValue: undefined,
+  ): string | undefined;
 };
 
 export default configman;
