@@ -4,6 +4,7 @@
   "description": "Tool for defining and checking environment variables in one place.",
   "author": "Wunderflats GmbH",
   "license": "MIT",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wunderflats/configman.git"
