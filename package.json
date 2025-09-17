@@ -16,13 +16,11 @@
   "scripts": {
     "start": "node lib/index.js",
     "test": "node --test test/",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint lib test",
-    "lint:check": "eslint --fix lib test",
+    "lint": "@biomejs/biome check --write",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.2.4",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-import": "2.29.1",
