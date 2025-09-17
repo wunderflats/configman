@@ -1,6 +1,6 @@
 {
   "name": "@wunderflats/configman",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Tool for defining and checking environment variables in one place.",
   "author": "Wunderflats GmbH",
   "license": "MIT",
