@@ -6,7 +6,10 @@ declare const configman: {
    */
   get(environmentVariable: string): string;
   getOrDefault(environmentVariable: string, defaultValue: string): string;
-  getOrDefault(environmentVariable: string, defaultValue: undefined): string|undefined;
+  getOrDefault(
+    environmentVariable: string,
+    defaultValue: undefined,
+  ): string | undefined;
 };
 
 export default configman;
