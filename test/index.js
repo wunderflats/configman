@@ -1,4 +1,3 @@
-/* eslint-disable no-process-env */
 "use strict";
 
 const configman = require("../lib/index");

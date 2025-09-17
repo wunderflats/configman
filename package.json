@@ -4,6 +4,7 @@
   "description": "Tool for defining and checking environment variables in one place.",
   "author": "Wunderflats GmbH",
   "license": "MIT",
+  "type": "commonjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wunderflats/configman.git"
@@ -16,21 +17,16 @@
   "scripts": {
     "start": "node lib/index.js",
     "test": "node --test test/",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "lint": "eslint lib test",
-    "lint:check": "eslint --fix lib test",
+    "format": "echo 'Use `npm run check` or `npm run check:write` instead' && exit 1",
+    "lint": "echo 'Use `npm run check` or `npm run check:write` instead' && exit 1",
+    "check:write": "biome check --write",
+    "check": "biome check",
     "prepare": "husky"
   },
   "devDependencies": {
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "6.2.0",
+    "@biomejs/biome": "2.2.4",
     "husky": "9.0.11",
-    "np": "^5.0.3",
-    "prettier": "3.2.5"
+    "np": "^5.0.3"
   },
   "dependencies": {
     "debug": "4.1.1"
