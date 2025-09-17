@@ -1,6 +1,3 @@
-/* eslint-disable no-process-env */
-"use strict";
-
 const configman = require("../lib/index");
 const assert = require("node:assert");
 const { describe, it } = require("node:test");
